@@ -1,2 +1,2 @@
 # IB-Computer-Science-HL-IA
-- 📌 PLEASE REFER TO THE USER MANUAL TITLED 'AARYAN IB COMPUTER SCIENCE IA USER MANUAL'
+- 📌 Please refer to the user manual, thanks.

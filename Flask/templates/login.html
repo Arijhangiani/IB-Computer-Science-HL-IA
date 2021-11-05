@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href=/static/login.css>
+    <title>Login Page</title>
+</head>
+
+  <form action="/form_login" method="post">
+    <div class="box">
+      <h2>Welcome, Dhruv.</h2>
+      <h3>Please enter your provided credentials:</h3>
+        <div class="inputBox">
+            <input type="text" name="username">
+            <label>Username</label>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="password">
+            <label>Password </label>
+        </div>
+        <input type="submit" name="" value="Login">
+    </div>
+  </form>
+
+  <h1 >{{info}}</h1>
+
+</body>
+</html>

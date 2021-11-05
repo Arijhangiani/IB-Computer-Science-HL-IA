@@ -1,0 +1,101 @@
+/* Font Family import */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Hind+Madurai:wght@300&display=swap');
+
+body { /* Font styling for the overall page + Adding background image */
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Hind Madurai', sans-serif;
+    background: url(econSets_bg.webp);
+    background-size: cover;
+
+}
+
+.box { /* Formatting of input fields and text */
+        
+    position: absolute;
+    top: 50%; /* Centering the text*/
+    left: 50%; /* Centering the text*/
+    transform: translate(-50%, -50%);
+    width: 400px; /* Creating the black box that surrounds the fields */
+    padding: 40px; /* Increases the area of the box */
+    background: rgba(0,0,0,.8); /* Depth effect to the box */
+    box-sizing: border-box; 
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    border-radius: 10px;
+}
+
+.box h2 { /* Setting margins and colour to the "Welcome, Dhruv" title */
+
+    padding: 0%;
+    color: #fff;
+    text-align: center;
+}
+
+.box h3 { /* Setting margins and colour to the "Welcome, Dhruv" title */
+    padding: 0%;
+    color: #fff;
+    text-align: center;
+}
+
+
+.box .inputBox {
+    position: relative; /* Will keep in line with the text */
+}
+
+.box .inputBox input { /* Formatting the input fields for both the username and the password*/
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color:#fff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.box .inputBox label { /* Labels also need to be correctly positioned above the input fields*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color:#fff;
+    letter-spacing: 1px;
+    pointer-events: none;
+    transition: .5%;
+}
+
+/* 
+This discusses the case when the 
+client has interracted with the input field. 
+
+When the client clicks into either the username
+or the password fields, the labels of both 'username' and
+'password' will move upwards by a position as well as turn blue
+*/
+
+.box .inputBox input:focus ~ label,
+.box .inputBox input:valid ~ label  { 
+    top: -18px; /* Raises the text by -18px vertically to avoid the client typing over the placeholder*/
+    left: 0;
+    color: #03a9f4;
+    font-size: 12px;
+}
+
+
+/* Formatting and adjusting the colour of the submit button*/ 
+.box input[type="submit"] {
+    position:center;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #03a9f4;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}

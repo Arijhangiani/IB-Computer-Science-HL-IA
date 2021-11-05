@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Hind+Madurai:wght@300&display=swap');
+
+body {
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Hind Madurai', sans-serif;
+    background: url(unnamed.jpeg);
+    background-size: cover;
+}
+
+
+.setsFormat .title h2 {
+    margin: 0 0 15px;
+    font-size:xx-large;
+    padding: 0%;
+    color: #fff;
+    text-align: center;
+}
+
+.setsFormat .title h3 {
+    margin: 13px;
+    font-size:large;
+    padding: 0%;
+    color: #fff;
+    text-align: center;
+}

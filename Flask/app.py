@@ -1,6 +1,7 @@
 from re import A
 from flask import Flask,request,render_template, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
+
 import pickle
 
 app = Flask(__name__)
@@ -30,35 +31,6 @@ def login():
         else:
 	         return render_template('Sets.html')
 
-@app.route("/schedule")
-def schedule():
-    #todo_list = Todo.query.all()
-    return render_template("schedule.html")
-    
-#@app.route("/add", methods=["POST"])
-#def add():
-#    title = request.form.get("title")
-#   new_todo = Todo(title=title, complete=False)
-#    db.session.add(new_todo)
-#    db.session.commit()
-#    return redirect(url_for("schedule"))
-
-
-#@app.route("/update/<int:todo_id>")
-#def update(todo_id):
-#    todo = Todo.query.filter_by(id=todo_id).first()
-#    todo.complete = not todo.complete
-#    db.session.commit()
-#    return redirect(url_for("schedule"))
-
-
-#@app.route("/delete/<int:todo_id>")
-#ef delete(todo_id):
-#    todo = Todo.query.filter_by(id=todo_id).first()
-#    db.session.delete(todo)
-#    db.session.commit()
-#    return redirect(url_for("schedule"))
-
 @app.route('/unitOne')
 def unitone():
     return render_template('res_Allo.html')
@@ -78,6 +50,10 @@ def unitfour():
 @app.route('/unitFive')
 def unitfive():
     return render_template('govt_Macro.html')
+
+@app.route('/scheduler')
+def scheduler():
+    return render_template('todolist.html')
 
 if __name__ == '__main__':
     #db.create_all()

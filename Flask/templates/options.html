@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/options.css">
+    <title>Options</title>
+</head>
+<body>
+    <div class="titles">
+        <h2 style="margin-top: 10px; text-align: center;">Welcome to the Options</h2>
+        <h3 style="margin-top: 10; text-align: center;">Please select what you would like to do today</h3>
+    </div>
+    
+    <div class="submitToDoList">
+        <input type="submit" name="" value="Sets of A-Levels Economics Flashcards" onclick="sendToDoList()" 
+        style="width: 540px; 
+            height: 130px;
+            margin-top: 40px; 
+            border-radius: 50px;
+            background-color:rgb(114, 208, 224);
+            box-shadow: 30px;
+            font-size: x-large; 
+            font-family: inherit;
+            margin: 20px;
+            display: block; 
+            margin: auto;">
+    </div>
+    <div class="submitToSets">
+        <input type="submit" name="" value="Flashcard Planner" onclick="sendSets()"
+        style="width: 540px; 
+            height: 130px;
+            margin-top: 240px;  
+            border-radius: 50px;
+            background-color:rgb(114, 208, 224);
+            box-shadow: 60px;
+            font-size: x-large; 
+            font-family: inherit; display: block; 
+            margin: auto;"> 
+    </div>
+
+    <script type="text/javascript"> /* Redirecting the client to the following flashcard sets after he interacts with the various buttons*/
+        function sendToDoList() {
+            location.assign("/sets")
+        }
+        function sendSets() {
+            location.assign("/scheduler")
+        }
+    </script>
+</body>
+</html>

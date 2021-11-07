@@ -24,12 +24,24 @@ def login():
     name1=request.form['username']
     pwd=request.form['password']
     if name1 not in database:
-	    return render_template('login.html',info='Invalid User')
+	    return render_template('login.html', info='Invalid User')
     else:
         if database[name1]!=pwd:
-            return render_template('login.html',info='Invalid Password')
+            return render_template('login.html', info='Invalid Password')
         else:
-	         return render_template('Sets.html')
+	         return render_template('options.html')
+
+@app.route('/selection')
+def selection():
+    return render_template('options.html')
+
+@app.route('/scheduler')
+def scheduler():
+    return render_template('todolist.html')
+
+@app.route('/sets')
+def sets():
+    return render_template('Sets.html')
 
 @app.route('/unitOne')
 def unitone():
@@ -50,10 +62,6 @@ def unitfour():
 @app.route('/unitFive')
 def unitfive():
     return render_template('govt_Macro.html')
-
-@app.route('/scheduler')
-def scheduler():
-    return render_template('todolist.html')
 
 if __name__ == '__main__':
     #db.create_all()

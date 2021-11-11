@@ -17,7 +17,8 @@
           <div>
             <button id="show_card_box">Add Card</button>
             <button id="delete_cards">Del Cards</button>
-            <button id="print_cards">Print Cards</button>
+            <button id="print_cards" onclick=window.print()>Print Cards</button>
+            <button id="logout" onclick="logout()">Logout</button>
           </div>
         </div>
       </div>
@@ -48,5 +49,11 @@
   </main>
   
   <script src="/static/govt_Macro.js"></script>
+
+<script>
+  function logout() {
+    location.assign("/");
+  }
+</script>
 </body>
 </html>

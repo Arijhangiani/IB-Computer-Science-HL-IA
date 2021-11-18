@@ -1,3 +1,4 @@
+# run: pip install -r requirements.txt in your shell to install the libraries.
 bcrypt==3.2.0
 cffi==1.15.0
 click==8.0.3

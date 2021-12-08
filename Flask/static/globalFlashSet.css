@@ -14,10 +14,11 @@ body{ /* Settings to the font as well as setting the background of the flashcard
 }
 
 button{
-  padding: 8px;
+  padding: 15px;
   outline: none;
   cursor: pointer;
   border: 1px solid lightgray;
+  margin-right: 6px;
   border-radius: 5px;
   background: whitesmoke;
 }

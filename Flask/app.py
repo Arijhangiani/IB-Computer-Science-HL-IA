@@ -1,10 +1,11 @@
 from re import A
-from flask import Flask,request,render_template, url_for, redirect
+from flask import Flask, request, render_template, url_for, redirect, session, g
 from flask_sqlalchemy import SQLAlchemy
 
-import pickle
+import pickle, os
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -17,23 +18,24 @@ class Todo(db.Model):
 @app.route('/')
 def index():
     return render_template("login.html")
-database={'DKothari':'DK200304'}
+database={'abc':'123'}
 
 @app.route('/form_login',methods=['POST','GET'])
 def login():
     name1=request.form['username']
     pwd=request.form['password']
     if name1 not in database:
-	    return render_template('login.html', info='Invalid User')
+        return render_template('login.html', info='Invalid User')
     else:
         if database[name1]!=pwd:
             return render_template('login.html', info='Invalid Password')
         else:
-	         return render_template('options.html')
+             return render_template('options.html')
+
 
 @app.route('/selection')
 def selection():
-    return render_template('options.html')
+        return render_template('options.html')
 
 @app.route('/scheduler')
 def scheduler():
@@ -65,4 +67,4 @@ def unitfive():
 
 if __name__ == '__main__':
     #db.create_all()
-    app.run()
+    app.run(debug=True)

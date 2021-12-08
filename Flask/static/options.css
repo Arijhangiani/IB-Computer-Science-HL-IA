@@ -28,3 +28,8 @@ body {
     color: #fff;
     text-align: center;
 }
+
+.container .logout {
+  display: flex;
+  flex-direction:column;
+}

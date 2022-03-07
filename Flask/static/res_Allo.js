@@ -5,7 +5,7 @@ document.getElementById("save_card").addEventListener("click", () => {
 });
 
 document.getElementById("delete_cards").addEventListener("click", () => {
-  localStorage.clear();
+  localStorage.clear(unitOneArray);
   flashcards.innerHTML = '';
   unitOneArray = [];
 });

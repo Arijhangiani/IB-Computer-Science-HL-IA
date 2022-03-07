@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 import pickle, os
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+app.config["SECRET_KEY"] = "ThisIsA$ecretKey"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -22,15 +22,29 @@ database={'abc':'123'}
 
 @app.route('/form_login',methods=['POST','GET'])
 def login():
-    name1=request.form['username']
-    pwd=request.form['password']
-    if name1 not in database:
-        return render_template('login.html', info='Invalid User')
-    else:
-        if database[name1]!=pwd:
-            return render_template('login.html', info='Invalid Password')
+    if request.method == "POST":
+
+        name1=request.form['username']
+        pwd=request.form['password']
+        if name1 not in database:
+            return render_template('login.html', info='Invalid User')
         else:
-             return render_template('options.html')
+            if database[name1]!=pwd:
+                return render_template('login.html', info='Invalid Password')
+            else:
+                if "user" in session:
+                    return render_template("options.html")
+                
+                session["USERNAME"] = database["abc"]
+                print("user added to session")
+                return render_template('options.html')
+
+@app.before_request
+def before_request():
+    g.abc = None
+
+    if 'abc' in session:
+        g.abc = session["USERNAME"]
 
 
 @app.route('/selection')

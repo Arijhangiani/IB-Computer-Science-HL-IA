@@ -1,4 +1,4 @@
-var unitTwoArray = localStorage.getItem('cards2') ? JSON.parse(localStorage.getItem('cards2')) : [];
+var unitTwoArray = localStorage.getItem('items2') ? JSON.parse(localStorage.getItem('items2')) : [];
 
 document.getElementById("save_card").addEventListener("click", () => {
   addFlashcard();
@@ -19,11 +19,11 @@ document.getElementById("close_card_box").addEventListener("click", () => {
 });
 
 flashcardMaker = (text) => {
-  const flashcard2 = document.createElement("div");
+  const flashcard = document.createElement("div");
   const question = document.createElement('h2');
   const answer = document.createElement('h2');
 
-  flashcard2.className = 'flashcard';
+  flashcard.className = 'flashcard';
 
   question.setAttribute("style", "border-top:1px solid red; padding: 15px; margin-top:30px");
   question.textContent = text.my_question;
@@ -31,17 +31,17 @@ flashcardMaker = (text) => {
   answer.setAttribute("style", "text-align:center; display:none; color:red");
   answer.textContent = text.my_answer;
 
-  flashcard2.appendChild(question);
-  flashcard2.appendChild(answer);
+  flashcard.appendChild(question);
+  flashcard.appendChild(answer);
 
-  flashcard2.addEventListener("click", () => {
+  flashcard.addEventListener("click", () => {
     if(answer.style.display == "none")
       answer.style.display = "block";
     else
       answer.style.display = "none";
   })
 
-  document.querySelector("#flashcards").appendChild(flashcard2);
+  document.querySelector("#flashcards").appendChild(flashcard);
 }
 
 unitTwoArray.forEach(flashcardMaker);
@@ -56,7 +56,7 @@ addFlashcard = () => {
   }
 
   unitTwoArray.push(flashcard_info);
-  localStorage.setItem('card2', JSON.stringify(unitTwoArray));
+  localStorage.setItem('items2', JSON.stringify(unitTwoArray));
   flashcardMaker(unitTwoArray[unitTwoArray.length - 1]);
   question.value = "";
   answer.value = "";

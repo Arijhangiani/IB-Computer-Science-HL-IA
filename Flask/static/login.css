@@ -44,15 +44,14 @@ body { /* Font styling for the overall page + Adding background image */
 }
 
 .box .inputBox input { /* Formatting the input fields for both the username and the password*/
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color:#fff;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
+    width: 110%;
+    padding: 15px 0;
+    font-size: 13px;
+    color:rgb(196, 188, 188);
+    letter-spacing: 1.3px;
+    margin-bottom: 34px;
     border: none;
     border-bottom: 1px solid #fff;
-    outline: none;
     background: transparent;
 }
 
@@ -94,8 +93,8 @@ or the password fields, the labels of both 'username' and
     border: none;
     outline: none;
     color: #fff;
-    background: #03a9f4;
-    padding: 10px 20px;
+    background: #4f7a8f;
+    padding: 12px 23px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 4.6px;
 }

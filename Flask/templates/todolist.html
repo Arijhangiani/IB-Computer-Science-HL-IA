@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport"/>
     <link rel="stylesheet" href="/static/todolist.css"/>
     <link rel="shortcut icon" href="https://static.wixstatic.com/media/2c087d_73dcbde349ad4de8817b27dd2bd93ea5~mv2.png/v1/fill/w_490,h_490,al_c/2c087d_73dcbde349ad4de8817b27dd2bd93ea5~mv2.png" />
     <link
@@ -20,20 +20,20 @@
       <h1>Flashcard Planner</h1>
     </header>
     <form>
-      <input type="text" class="todo-input" />
-      <button class="todo-btn" type="submit">
+      <input type="text" class="taskInput" />
+      <button class="todoSubmit" type="submit">
         <i class="fas fa-plus-square"></i>
       </button>
       <div class="select">
-        <select name="todos" class="filter-todo">
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="uncompleted">Uncompleted</option>
+        <select name="tasks" class="filterAllTasks">
+          <option value="viewAll">Show All</option>
+          <option value="finishedTasks">Completed Tasks</option>
+          <option value="notComplete">Uncompleted Tasks</option>
         </select>
       </div>
     </form>
-    <div class="todo-container">
-      <ul class="todo-list"></ul>
+    <div class="taskContainer">
+      <ul class="TaskList"></ul>
     </div>
 
     <div class="navigation">

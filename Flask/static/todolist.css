@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 2;
     box-sizing: border-box;
   }
   
@@ -18,7 +18,7 @@
   
   header,
   form {
-    min-height: 20vh;
+    min-height: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,10 +26,10 @@
   
   form input,
   form button {
-    padding: 0.5rem;
-    font-size: 2rem;
+    padding: 0.45rem;
+    font-size: 2.2rem;
     border: none;
-    background-color: #fff;
+    background-color: rgb(182, 179, 179);
     outline: none;
   }
   
@@ -76,10 +76,9 @@
   .trash-btn {
     background-color: #f01111;
     color: #fff;
-    border: none;
-    padding: 1rem;
+    padding: 1.1rem;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.5rem;
     outline: none;
   }
   
@@ -91,12 +90,12 @@
     padding: 0 0.5rem;
   }
   
-  .fa-trash,
-  .fa-check {
+  .fa-remover,
+  .fa-valid {
     pointer-events: none;
   }
   
-  .completed {
+  .successfulAssignments {
     text-decoration: line-through;
     opacity: 0.5;
   }
@@ -107,15 +106,13 @@
   }
   
   select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     outline: none;
     border: none;
-    color: #868486;
-    width: 10rem;
+    color: #686768;
+    width: 12rem;
     cursor: pointer;
-    padding: 1rem;
+    padding: 1.2rem;
   }
   
   .select {
@@ -127,9 +124,9 @@
   .select::after {
     content: '\25BC';
     position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #47a6ff;
+    top: 2;
+    right: 2;
+    background-color: #50a9fd;
     padding: 1rem;
     pointer-events: none;
     transition: all 0.3s ease;
@@ -168,25 +165,18 @@
   .button {
       text-decoration: none;
       float: right;
-    padding: 12px;
-    margin: 15px;
+    padding: 13px;
+    margin: 15.5px;
     color: white;
-    width: 25px;
-    padding-right: 37px;
-    background-color: black;
-    transition: width .35s;
-    -webkit-transition: width .35s;
+    width: 23px;
+    padding-right: 40px;
+    background-color: rgb(43, 35, 35);
+    transition: width .40s;
+    -webkit-transition: width .25s;
     overflow: hidden
   }
   
-  a:hover {
-    width: 142px;
-  }
-  
   a:hover .logout{
-    opacity: .9;
-  }
-  
-  a {
-    text-decoration: none;
+    opacity: .8;
+    width: 136px;
   }

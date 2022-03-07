@@ -1,10 +1,10 @@
-// Selectors
-let todoInput = document.querySelector('.todo-input');
-let todoList = document.querySelector('.todo-list');
-const todoBtn = document.querySelector('.todo-btn');
-const filterOption = document.querySelector('.filter-todo');
+// Selection instantiations
+let todoInput = document.querySelector('.taksInput');
+let todoList = document.querySelector('.taskList');
+const todoBtn = document.querySelector('.taskButton');
+const filtPreference = document.querySelector('.filTasks');
 
-// Events Listeners
+// Listeners when adding to do assignments
 document.addEventListener('DOMContentLoaded', getTodos);
 todoBtn.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
@@ -15,34 +15,39 @@ function addTodo(event) {
   // Prevent Form
   event.preventDefault();
   // Todo Div
-  let todoDiv = document.createElement('div');
-  todoDiv.classList.add('todo');
+  let task = document.createElement('div');
+  task.classList.add('todo');
   // Create li
   let newTodo = document.createElement('li');
   newTodo.textContent = todoInput.value;
-  newTodo.classList.add('todo-item');
+  newTodo.classList.add('task element');
   todoDiv.appendChild(newTodo);
-  // Add Tod To Local Storage
+
+  // To save the card to local storage (Through PyCache)
   saveInLocalStorage(todoInput.value);
+  
   // Check Mark Button
   const completedBtn = document.createElement('button');
   completedBtn.innerHTML = '<i class="fas fa-check"></i>';
   completedBtn.classList.add('complate-btn');
   todoDiv.appendChild(completedBtn);
+  
   // Check Trash Button
   const trushBtn = document.createElement('button');
   trushBtn.innerHTML = '<i class="fas fa-trash"></i>';
   trushBtn.classList.add('trash-btn');
-  todoDiv.appendChild(trushBtn);
+  todoDiv.appendChild(DeleteCardBtn);
+  
   // Append To List
-  todoList.appendChild(todoDiv);
+  todoList.appendChild(task);
+  
   // Clear Todo Input Value
   todoInput.value = '';
 }
 
 function deleteCheck(e) {
   let item = e.target;
-  // Delete Todo
+  // Delete task with animation
   if (item.classList[0] == 'trash-btn') {
     let todo = item.parentElement;
     // Animation
@@ -53,7 +58,7 @@ function deleteCheck(e) {
     });
   }
   // Check Mark
-  if (item.classList[0] == 'complate-btn') {
+  if (item.classList[0] == 'successGreenBtn') {
     let todo = item.parentElement;
     todo.classList.toggle('completed');
   }
@@ -122,38 +127,6 @@ function saveInLocalStorage(todo) {
   }
   todos.push(todo);
   localStorage.setItem('todos', JSON.stringify(todos));
-}
-
-function getTodos() {
-  let todos;
-  if (localStorage.getItem('todos') === null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem('todos'));
-  }
-  todos.forEach(function (todo) {
-    // Todo Div
-    let todoDiv = document.createElement('div');
-    todoDiv.classList.add('todo');
-    // Create li
-    let newTodo = document.createElement('li');
-    newTodo.textContent = todo;
-    newTodo.classList.add('todo-item');
-    todoDiv.appendChild(newTodo);
-
-    // Check Mark Button
-    const completedBtn = document.createElement('button');
-    completedBtn.innerHTML = '<i class="fas fa-check"></i>';
-    completedBtn.classList.add('complate-btn');
-    todoDiv.appendChild(completedBtn);
-    // Check Trash Button
-    const trushBtn = document.createElement('button');
-    trushBtn.innerHTML = '<i class="fas fa-trash"></i>';
-    trushBtn.classList.add('trash-btn');
-    todoDiv.appendChild(trushBtn);
-    // Append To List
-    todoList.appendChild(todoDiv);
-  });
 }
 
 function removeFromLocalStorage(todo) {

@@ -1,3 +1,2 @@
 # Aaryan's IB Computer Science HL IA
-- 📌 Congrats, you've made it to the github repository :D
-- 🚩 Please refer to the remainder of the user manual to run the web-app
+This repo contains the code that I constructed to produce a Flashcard website for a client made with the use of HTML/CSS on the front end as well as JavaScript and Python on the backend. Flask API has also been of great use for sending requests to a local server.
